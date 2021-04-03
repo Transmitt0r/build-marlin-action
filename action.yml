@@ -1,6 +1,11 @@
 # action.yml
 name: 'Build Marlin'
 description: 'Build Marlin Firmware'
+author: Transmitt0r
+branding:
+  color: 'green'
+  icon: 'package'
+
 outputs:
   binary: # id of output
     description: 'filepath to fw binary'
