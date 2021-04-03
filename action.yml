@@ -1,5 +1,5 @@
 # action.yml
-name: 'Build Marlin FW'
+name: 'Build Marlin'
 description: 'Build Marlin Firmware'
 outputs:
   binary: # id of output

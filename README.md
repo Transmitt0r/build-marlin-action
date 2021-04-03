@@ -1,21 +1,30 @@
-# Hello world docker action
+# Build Marlin Firmware Action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
-
-## Inputs
-
-### `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
+This action uses the platformio cli to build a [Marlin](https://github.com/MarlinFirmware/Marlin) firmware binary.
 
 ## Outputs
 
-### `time`
+### `binary`
 
-The time we greeted you.
+location of the resulting binary file
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v1
-with:
-  who-to-greet: 'Mona the Octocat'
+```yml
+name: Marlin CI
+
+on: [push]
+
+jobs:
+  build-marlin:
+    runs-on: ubuntu-latest
+    name: Build Marlin Firmware
+    steps:
+    - uses: actions/checkout@v2
+    - id: build
+      uses: Transmitt0r/build-marlin-action@v1
+    - uses: actions/upload-artifact@v2
+      with:
+        name: firmware.bin
+        path: "${{ steps.build.outputs.binary }}"
+```
