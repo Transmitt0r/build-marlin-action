@@ -1,0 +1,9 @@
+# action.yml
+name: 'Build Marlin FW'
+description: 'Build Marlin Firmware'
+outputs:
+  binary: # id of output
+    description: 'filepath to fw binary'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
