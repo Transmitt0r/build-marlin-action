@@ -2,6 +2,18 @@
 
 This action uses the platformio cli to build a [Marlin](https://github.com/MarlinFirmware/Marlin) firmware binary.
 
+Make sure that in your `platformio.ini` you set the `default_envs` variable to match your printer. Example for an Ender3 v2:
+
+```ini
+...
+[platformio]
+src_dir      = Marlin
+boards_dir   = buildroot/share/PlatformIO/boards
+default_envs = STM32F103RET6_creality
+include_dir  = Marlin
+...
+```
+
 ## Outputs
 
 ### `binary`
