@@ -22,7 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - id: build
-      uses: Transmitt0r/build-marlin-action@v1
+      uses: Transmitt0r/build-marlin-action@v1.0.0
     - uses: actions/upload-artifact@v2
       with:
         name: firmware.bin
